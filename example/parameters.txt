@@ -1,0 +1,4 @@
+abundance	level-genus.csv
+metadata	metadata.txt
+variable	COCAINE USE
+ClientID	CLIENT IDENTIFIER
