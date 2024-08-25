@@ -41,7 +41,8 @@ class Abund2LEfSePlugin:
 
        df["ClientID"] = df.index
        # transform sample to match metadata
-       df["ClientID"] = df["ClientID"].apply(lambda x: x.split("_")[0].replace(".", "/"))
+       if ("removeUnderscore" in self.parameters):
+          df["ClientID"] = df["ClientID"].apply(lambda x: x.split("_")[0].replace(".", "/"))
 
        df = df.merge(metadata_df, how="left", on="ClientID")
        df.index = df["ClientID"]
